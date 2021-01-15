@@ -1,0 +1,22 @@
+@use "../variables/colors";
+@use "get-keys" as *;       // as * hogy ne kelljen megadni a namespace-t (get-keys.)
+@use "sass:map"; 
+
+@function var($string, $data: colors.$colors){
+    $keys: get-keys($string);
+    
+    @each $key in $keys{
+       /*  @debug type-of($value: list.nth($keys, 1));
+        @debug type-of(red);                // a listában lévő kulcsok stringek, viszont a fájlban színekként vannak */
+        //@debug $keys;
+        // megoldás:
+        // idézőjelek a _colors.scss-ben!
+        $data: map-get($data, $key);                                    // map.get helyett, mivel nincs @use, ezért globálisan is elérhető, azt meg így kell: map-get
+    }
+    @return $data;
+}
+
+
+// @debug var(theme-red);      // ekkor null-t kapok
+// @debug var(theme-bluegrey);     
+// @debug var(theme-red);      // most már jó, ha a színeket "" közé tettem

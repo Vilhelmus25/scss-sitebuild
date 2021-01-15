@@ -1,0 +1,9 @@
+@use "sass:map";
+
+@mixin generate-colored-texts($main-palette){
+    @each $key, $value in $main-palette {
+        .text--#{"" + $key}{        // így már string-ként és nem színként fogja kezelni a színt, ha színként kezeli, akkor hibát dob!
+            color: $value;
+        }
+    }
+}

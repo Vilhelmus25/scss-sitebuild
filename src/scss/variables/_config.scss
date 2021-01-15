@@ -1,0 +1,33 @@
+$config: (
+    grid:(      // újabb map
+        size:12,
+        breakpoint: (   // újabb map
+            desktop: 992px,
+        )
+    ),
+    container: (
+        classname: container,        // ezt a stringet fogom felhasználni, amikor a containert legeneráltatom
+        maxWidth: 1680px,
+        padding: (
+            default: 5px,
+            mobile: 6px,
+            tablet: 7.5px,
+            desktop: 9px
+        )
+    ),
+    column: (
+        classname: col,
+        postfix: (
+            default: xs,       //column--default-12
+            mobile: sm,         // column--mobile-6
+            tablet: md,         // column--tablet-4
+            desktop: lg        // column--desktop-3
+        ),
+        padding: (
+            default: 10px,
+            mobile: 12px,
+            tablet: 15px,
+            desktop: 18px
+        )
+    )
+);        //map

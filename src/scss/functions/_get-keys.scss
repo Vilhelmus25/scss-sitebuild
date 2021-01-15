@@ -1,0 +1,24 @@
+@use "sass:string";              // @use -okat nem használok, ilyenkor a list.-okat elhagyjuk és a string. helyett str-  lesz
+@use "sass:list";
+
+@function get-keys($string, $separator: '-') {
+    $keys: ();
+    $index: str-index($string, $separator);
+    //themes-material-red
+    // material-red
+    // red
+    @while $index{
+        $key: str-slice($string, 1, $index - 1);
+        $keys: append($keys, $key);
+        $string: str-slice($string, $index + 1);
+        $index: str-index($string, $separator);
+    }
+
+    $keys: append($keys, $string);
+    //@debug type-of($value: $keys);
+    @return $keys;
+}
+
+//@debug get-keys(theme-material-red);
+
+

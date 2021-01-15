@@ -1,0 +1,179 @@
+@charset "UTF-8";
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 0rem 2rem;
+}
+.navbar__a {
+  margin: auto 0rem;
+}
+.navbar__button {
+  border-radius: 0.5rem;
+  padding: 0 1rem;
+  text-align: center;
+}
+/* $base-colors:(                  // ezt azért csináljuk, hogy ne generálja le a feketének és a fehérnek a világos és sötétebb árnyalatait. ezért egy map-ot csinálok, amit majd összefűzök a color-palettével.
+    black: #222,
+    white: #efefef,
+); */
+/* $color-palette":(
+    red":#f44336,
+    pink":#e91e63,
+    purple": #9c27b0,
+    deeppurple":#673ab7,
+    indigo": #3f51b5,
+    blue": #2196f3,
+    lightblue": #03a9f4,
+    cyan": #00bcd4,
+    teal": #009688,
+    green": #4caf50,
+    lightgreen": #8bc34a,
+    lime": #cddc39,
+    yellow": #ffeb3b,
+    amber": #ffc107,
+    orange": #ff9800,
+    deeporange": #ff5722,
+    brown": #795548,
+    grey": #9e9e9e,
+    bluegrey": #607d8b,
+); */
+/* $lighter-colors": 5,10,15,20;    // ez most egy lista, az elemeke csak fel vannak sorolva
+$darker-colors": 5,10,15,20;    // ez most egy lista, az elemeke csak fel vannak sorolva */
+@font-face {
+  font-family: Catamaran;
+  src: url(./Catamaran-VariableFont_wght.ttf);
+}
+@font-face {
+  font-family: Lato;
+  src: url(./Lato-Regular.ttf);
+}
+@font-face {
+  font-family: Muli;
+  src: url(./Mulish-VariableFont_wght.ttf);
+}
+.catamaran {
+  font-family: "Catamaran", Helvetica, Arial, sans-serif;
+}
+
+.lato {
+  font-family: "Lato", Helvetica, Arial, sans-serif;
+}
+
+.muli {
+  font-family: "Muli", Helvetica, Arial, sans-serif;
+}
+
+.text {
+  font: 1rem/1.5 Arial, Helvetica, sans-serif;
+  padding: 1rem 0;
+}
+
+.text--fromLeft {
+  color: #db3a44;
+}
+
+.text--toRight {
+  color: #7b4397;
+}
+
+.text--yellow {
+  color: #fdcb50;
+}
+
+.text--newFriend {
+  color: #fbc24b;
+}
+
+.text--iconHeart {
+  color: #db3a44;
+}
+
+.text--twitterDot {
+  color: #1da1f2;
+}
+
+.text--white {
+  color: white;
+}
+
+.text--facebookDot {
+  color: #3b5998;
+}
+
+.text--googleDot {
+  color: #dd4b39;
+}
+
+.text--black {
+  color: #000000;
+}
+
+.text--light {
+  color: #F8F9FA;
+}
+
+.text--black {
+  color: #222;
+}
+
+.text--white {
+  color: #efefef;
+}
+
+.background--fromLeft {
+  background-color: #db3a44;
+}
+
+.background--toRight {
+  background-color: #7b4397;
+}
+
+.background--yellow {
+  background-color: #fdcb50;
+}
+
+.background--newFriend {
+  background-color: #fbc24b;
+}
+
+.background--iconHeart {
+  background-color: #db3a44;
+}
+
+.background--twitterDot {
+  background-color: #1da1f2;
+}
+
+.background--white {
+  background-color: white;
+}
+
+.background--facebookDot {
+  background-color: #3b5998;
+}
+
+.background--googleDot {
+  background-color: #dd4b39;
+}
+
+.background--black {
+  background-color: #000000;
+}
+
+.background--light {
+  background-color: #F8F9FA;
+}
+
+/* @include backgrounds.generate-lighter-colored-backgrounds($theme, var(lighter));
+@include backgrounds.generate-darker-colored-backgrounds($theme, var(darker)); */
+/* @use "variables/variables";
+@use "mixins/mixins";
+@use "functions/functions";
+
+
+@include generate-container();          // ez is kell, használjuk a mixinünket, meghívjuk!
+@include column-default-style();     
+@include generate-columns();     
+ */
+
+/*# sourceMappingURL=style.css.map */

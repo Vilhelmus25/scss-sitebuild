@@ -1,0 +1,32 @@
+// .column--default-2
+@mixin set-column-width($viewport, $column-count) {         // itt már lesz param. :)
+
+    //     calc(100% * $column-count / var(grid-size));         // lent nem kell a calc, ha változóba tesszük 
+    // $width: 100% * $column-count / var(grid-size);
+    $width: get-column-width($column-count);
+    $number: convert-string-to-number($viewport);
+
+
+    //@if $viewport == var(column-postfix-default){         // ez volt, a convert-string-to-number-ben megírtuk egyszerűbbre
+    @if $number == 1{
+        width: $width;          // hiszen, ez egy %-os értéket fog visszaadni
+    }
+
+    @else if $number == 2{
+        @include mobile-up{                                                 // kell a mobile media query
+            width: $width;
+        }
+    }
+
+    @else if $number == 3{
+        @include tablet-up{                                                 // kell a mobile media query
+            width: $width;
+        }
+    }
+
+    @else if $number == 4{
+        @include desktop-up{                                                 // kell a mobile media query
+            width: $width;
+        }
+    }
+}

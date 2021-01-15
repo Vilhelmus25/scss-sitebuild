@@ -1,0 +1,35 @@
+@use "../variables/colors";
+@use "../mixins/texts";
+@use "../functions/var.scss" as *;
+@use "../functions/get-default-theme" as *;
+@use "sass:map";
+
+@font-face{
+  font-family: Catamaran;
+  src: url(./Catamaran-VariableFont_wght.ttf); 
+};
+@font-face{
+  font-family: Lato;
+  src: url(./Lato-Regular.ttf); 
+};
+@font-face{
+  font-family: Muli;
+  src: url(./Mulish-VariableFont_wght.ttf);
+};
+
+.catamaran{
+    font-family: 'Catamaran', Helvetica, Arial, sans-serif;
+};
+.lato{
+    font-family: 'Lato', Helvetica, Arial, sans-serif;
+};
+.muli{
+    font-family: 'Muli',  Helvetica, Arial, sans-serif;
+};
+
+.text {
+  font: 1rem/1.5 Arial, Helvetica, sans-serif;
+  padding: 1rem 0;
+};
+
+@include texts.generate-colored-texts(map.merge(get-default-theme(), var(base)));

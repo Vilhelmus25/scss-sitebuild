@@ -1,0 +1,51 @@
+
+@mixin mobile-down {
+    @media only screen and (max-width: var(grid-breakpoint-mobile) -1px){        // kell a -1 px, mert ha a 640 px alatt vagyunk
+        @content;       // ez oldja meg
+    }
+}
+
+@mixin mobile-up {
+    @media only screen and (min-width: var(grid-breakpoint-mobile)){        // úgy akarjuk, hogy bármilyen contetntet bele tudjunk tenni
+        @content;       // ez oldja meg
+    }
+}
+
+        @mixin mobile-between-tablet {
+            @media only screen and (min-width: var(grid-breakpoint-mobile)) and (max-width: var(grid-breakpoint-tablet) -1px){        // úgy akarjuk, hogy bármilyen contetntet bele tudjunk tenni
+                @content;       // ez oldja meg
+            }
+        }
+
+
+@mixin tablet-down {
+    @media only screen and (max-width: var(grid-breakpoint-tablet) -1px){        // kell a -1 px, mert ha a 640 px alatt vagyunk
+        @content;       // ez oldja meg
+    }
+}
+
+@mixin tablet-up {
+    @media only screen and (min-width: var(grid-breakpoint-tablet)){        // úgy akarjuk, hogy bármilyen contetntet bele tudjunk tenni
+        @content;       // ez oldja meg
+    }
+}
+
+        @mixin tablet-between-tablet {
+            @media only screen and (min-width: var(grid-breakpoint-tablet)) and (max-width: var(grid-breakpoint-desktop) -1px){        // úgy akarjuk, hogy bármilyen contetntet bele tudjunk tenni
+                @content;       // ez oldja meg
+            }
+        }
+
+        @mixin desktop-up {
+            @media only screen and (min-width: var(grid-breakpoint-desktop)){        // úgy akarjuk, hogy bármilyen contetntet bele tudjunk tenni
+                @content;       // ez oldja meg
+            }
+        }
+
+@mixin desktop-down {
+    @media only screen and (max-width: var(grid-breakpoint-desktop) -1px){        // kell a -1 px, mert ha a 640 px alatt vagyunk
+        @content;       // ez oldja meg
+    }
+}
+
+

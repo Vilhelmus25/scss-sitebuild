@@ -1,0 +1,23 @@
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    padding: 0rem 2rem;
+
+    &__a{
+        margin: auto 0rem;
+    }
+
+    &__button{
+    border-radius: 0.5rem;
+    padding: 0 1rem;
+    text-align: center;    
+        &-menu{
+
+        };
+    }
+}
+
+.fa-bars{
+
+}
