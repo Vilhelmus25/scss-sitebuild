@@ -1,45 +1,669 @@
 @charset "UTF-8";
 .navbar {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
-  padding: 1rem 2rem;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  padding: 0rem 7.5rem;
+  padding-bottom: 0.75rem;
+  padding-top: 0.25rem;
 }
 .navbar__a {
+  color: #fdcb50;
+  display: flex;
+  font-size: 2rem;
   margin: auto 0rem;
+  padding: 0rem, 0rem;
   text-decoration: none;
+  align-items: flex-start;
+  align-self: center;
+}
+.navbar__a:hover {
+  color: white;
+  transition: 0.3s ease;
 }
 .navbar__button {
-  border-radius: 0.5rem;
-  padding: 0 1rem;
+  display: none;
+}
+@media screen and (max-width: 991px) {
+  .navbar__button {
+    border-radius: 0.5rem;
+    border: 1px;
+    border-style: solid;
+    border-color: #dddddd;
+    background-color: #fff;
+    cursor: pointer;
+    display: block;
+    outline: none;
+    padding: 0rem 1rem;
+    text-align: center;
+  }
+}
+.navbar__container {
+  /* olyan mintha azt adtam volna, hogy   .nav__container     */
+  align-items: flex-start;
+  display: flex;
+  flex-direction: row-reverse;
+  /* ettől fordul meg a sorrendje a checkboxnak és a labelnek */
+}
+@media screen and (min-width: 992px) {
+  .navbar__container {
+    align-items: center;
+    justify-content: right;
+  }
+}
+.navbar__list {
+  display: none;
+  /* ne jelenjen meg a lista alapból (mobil nézetben) */
+  flex-direction: column;
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+}
+@media screen and (min-width: 992px) {
+  .navbar__list {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    list-style: none;
+    margin: 0 auto;
+    padding: 1rem;
+  }
+}
+.navbar__item {
+  text-align: end;
+}
+@media screen and (min-width: 992px) {
+  .navbar__item--link {
+    color: #bbbbbb;
+    list-style: none;
+    margin: 0 auto;
+    padding: 1rem;
+    text-decoration: none;
+  }
+}
+.navbar__item--link:hover {
+  color: white;
+  transition: 0.3s ease;
+}
+@media screen and (min-width: 992px) {
+  .navbar {
+    margin-top: -5rem;
+  }
+}
+
+.purple-pink {
+  background-image: url("/dist/img/bg-pattern.png"), linear-gradient(to right, #db3a44, #7b4397);
+  background-repeat: repeat;
+  padding: 10rem 0rem;
+}
+
+.newAgeApp {
+  font-size: 2.5rem;
+  margin: 1rem;
+  padding: 1rem 4rem;
+  text-align: left;
+  color: #F8F9FA;
+}
+@media screen and (max-width: 992px) {
+  .newAgeApp {
+    font-size: 2rem;
+    text-align: center;
+  }
+}
+.newAgeApp__startNow {
+  background: transparent;
+  border-color: #F8F9FA;
+  border-radius: 50px 50px 50px 50px;
+  color: #F8F9FA;
+  cursor: pointer;
+  font-size: 1rem;
+  margin: 3rem 0rem;
+  padding: 1.25rem 2.5rem;
+  text-transform: uppercase;
+}
+.newAgeApp__startNow:hover {
+  border-color: #fdcc52;
+  color: #fdcb50;
+  transition: 0.3s ease;
+}
+.newAgeApp__startNow:focus {
+  outline: none;
+}
+
+.phone {
+  height: auto;
+  width: 100%;
+}
+.phone__img {
+  width: 400px;
+  padding-left: 29%;
+  position: relative;
+}
+@media screen and (max-width: 992px) {
+  .phone__img {
+    padding-left: 0%;
+  }
+}
+@media screen and (min-width: 992px) {
+  .phone__img {
+    padding-left: 15%;
+  }
+}
+.phone__img--inner {
+  width: 352px;
+  padding-left: 27.25%;
+  position: absolute;
+  top: 104px;
+  left: 40.5px;
+}
+@media screen and (max-width: 639px) {
+  .phone__img--inner {
+    top: 100px;
+    left: 21px;
+  }
+}
+@media screen and (max-width: 992px) {
+  .phone__img--inner {
+    padding-left: 0%;
+    top: 104px;
+    left: 36px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .phone__img--inner {
+    padding-left: 15%;
+    top: 104px;
+    left: 36px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .phone__img--inner {
+    top: 112px;
+    left: 39px;
+  }
+}
+
+.discover {
+  background-color: #fdcb50;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 3rem 15rem;
+}
+@media screen and (max-width: 991px) {
+  .discover {
+    padding: 3rem 7.5rem;
+  }
+}
+
+.discoverTheBuzz {
+  font-size: 4rem;
   text-align: center;
 }
-/* $base-colors:(                  // ezt azért csináljuk, hogy ne generálja le a feketének és a fehérnek a világos és sötétebb árnyalatait. ezért egy map-ot csinálok, amit majd összefűzök a color-palettével.
-    black: #222,
-    white: #efefef,
-); */
-/* $color-palette":(
-    red":#f44336,
-    pink":#e91e63,
-    purple": #9c27b0,
-    deeppurple":#673ab7,
-    indigo": #3f51b5,
-    blue": #2196f3,
-    lightblue": #03a9f4,
-    cyan": #00bcd4,
-    teal": #009688,
-    green": #4caf50,
-    lightgreen": #8bc34a,
-    lime": #cddc39,
-    yellow": #ffeb3b,
-    amber": #ffc107,
-    orange": #ff9800,
-    deeporange": #ff5722,
-    brown": #795548,
-    grey": #9e9e9e,
-    bluegrey": #607d8b,
-); */
-/* $lighter-colors": 5,10,15,20;    // ez most egy lista, az elemeke csak fel vannak sorolva
-$darker-colors": 5,10,15,20;    // ez most egy lista, az elemeke csak fel vannak sorolva */
+
+.downloadNow {
+  font-size: 1.25rem;
+  text-align: center;
+}
+
+.img__container {
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (min-width: 992px) {
+  .img__container {
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    margin: auto;
+  }
+}
+.img__container--google {
+  height: auto;
+  padding-bottom: 3rem;
+  padding-left: 1.5rem;
+  padding-top: 2rem;
+  width: 200px;
+}
+@media screen and (max-width: 991px) {
+  .img__container--google {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0;
+    padding: 1rem 0rem;
+    width: 200px;
+  }
+}
+.img__container--apple {
+  height: auto;
+  padding-bottom: 3rem;
+  padding-left: 0.5rem;
+  padding-top: 2rem;
+  width: 200px;
+}
+@media screen and (max-width: 991px) {
+  .img__container--apple {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 5rem;
+    padding-left: 0;
+    padding-top: 1rem;
+    width: 200px;
+  }
+}
+
+.col-md-6 {
+  align-self: center;
+}
+
+.unlimitedFeatures {
+  margin-bottom: 4rem;
+}
+
+.container__unlimitedFeatures {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.container__unlimitedFeatures--unlimited {
+  font-size: 3rem;
+  margin: auto;
+  padding: 0rem 5rem;
+  padding-top: 3rem;
+  text-align: center;
+}
+.container__unlimitedFeatures--checkOut {
+  font-size: 1.25rem;
+  margin: auto;
+  padding: 2rem 5rem;
+  padding-bottom: 3rem;
+  text-align: center;
+  color: #888888;
+}
+.container__unlimitedFeatures--divider {
+  border-top: 3px solid #ddd;
+  border-radius: 10%;
+  width: 15%;
+}
+
+.unlimited-head {
+  padding: 3rem 5rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container__phonePros {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.phone2 {
+  height: auto;
+  width: 100%;
+  margin-top: 2rem;
+}
+.phone2__img {
+  width: 400px;
+  padding-left: 29%;
+  position: relative;
+}
+@media screen and (max-width: 992px) {
+  .phone2__img {
+    padding-left: 0%;
+  }
+}
+@media screen and (min-width: 992px) {
+  .phone2__img {
+    padding-left: 15%;
+    margin: auto;
+  }
+}
+.phone2__img--screen {
+  width: 352px;
+  padding-left: 27.25%;
+  position: absolute;
+  top: 104px;
+  left: 40.5px;
+}
+@media screen and (max-width: 639px) {
+  .phone2__img--screen {
+    top: 95px;
+    left: 19px;
+  }
+}
+@media screen and (max-width: 992px) {
+  .phone2__img--screen {
+    padding-left: 0%;
+    top: 104px;
+    left: 36px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .phone2__img--screen {
+    padding-left: 15%;
+    top: 108px;
+    left: 36px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .phone2__img--screen {
+    padding-left: 15%;
+    top: 112px;
+    left: 38px;
+  }
+}
+
+.row__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 3rem 0rem;
+  text-align: center;
+}
+@media screen and (max-width: 991px) {
+  .row__container {
+    flex-direction: column;
+    justify-content: center;
+    padding: 0rem 0rem;
+  }
+}
+
+.spec-icons {
+  font-size: 5rem;
+  background: -webkit-linear-gradient(0deg, #db3a44, #7b4397);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@media screen and (max-width: 991px) {
+  .col-sm-12 {
+    margin-top: 3rem;
+  }
+}
+
+.new-friends {
+  background-color: #fdcb50;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  opacity: 0.9;
+  padding: 3rem 15rem;
+  text-align: center;
+}
+@media screen and (max-width: 991px) {
+  .new-friends {
+    padding: 3rem 7.5rem;
+  }
+}
+.new-friends:hover {
+  opacity: 1;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+  /* If you want dots under the hoverable text */
+}
+
+.h1-newFriends {
+  font-size: 3rem;
+}
+
+.icon-heart {
+  color: #db3a44;
+  font-size: 4rem;
+}
+
+.icon-collection {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.twitter-circle {
+  height: 5rem;
+  width: 5rem;
+  background-color: #1da1f2;
+  border-radius: 50%;
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+  margin: 0.25rem;
+}
+
+.icon-social-twitter {
+  position: relative;
+  top: 20%;
+  color: white;
+  font-size: 3rem;
+}
+
+.facebook-circle {
+  height: 5rem;
+  width: 5rem;
+  background-color: #3b5998;
+  border-radius: 50%;
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+  margin: 0.25rem;
+}
+
+.icon-social-facebook {
+  position: relative;
+  top: 20%;
+  color: white;
+  font-size: 3rem;
+}
+
+.google-circle {
+  height: 5rem;
+  width: 5rem;
+  background-color: #dd4b39;
+  border-radius: 50%;
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+  margin: 0.25rem;
+}
+
+.icon-social-google {
+  position: relative;
+  top: 20%;
+  color: white;
+  font-size: 3rem;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #333333;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0rem;
+  border-radius: 30px;
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+.stop-waiting-start-building {
+  margin-top: 1rem;
+}
+
+.image-layout {
+  position: relative;
+  background-color: #000000;
+}
+
+.opacited-container {
+  padding: 0;
+}
+
+.opacitedImg {
+  width: 100%;
+  height: auto;
+  opacity: 0.4;
+  background-size: cover;
+}
+
+.to-left-waiting {
+  color: #F8F9FA;
+  font-size: 5rem;
+  left: 15%;
+  margin: 0;
+  position: absolute;
+  top: 20%;
+}
+@media screen and (max-width: 991px) {
+  .to-left-waiting {
+    font-size: 3rem;
+  }
+}
+
+.to-left-building {
+  color: #F8F9FA;
+  font-size: 5rem;
+  left: 15%;
+  margin: 0;
+  position: absolute;
+  top: 40%;
+}
+@media screen and (max-width: 991px) {
+  .to-left-building {
+    font-size: 3rem;
+  }
+}
+
+.to-left-button {
+  background-color: transparent;
+  border-color: #F8F9FA;
+  border-radius: 50px 50px 50px 50px;
+  color: #F8F9FA;
+  cursor: pointer;
+  font-size: 1rem;
+  text-transform: uppercase;
+  left: 15%;
+  margin: 0;
+  padding: 1.25rem 2.5rem;
+  position: absolute;
+  top: 60%;
+}
+.to-left-button:hover {
+  border-color: #fdcc52;
+  color: #fdcc52;
+  transition: 0.3s ease;
+}
+.to-left-button:focus {
+  outline: none;
+}
+@media screen and (max-width: 991px) {
+  .to-left-button {
+    font-size: 0.75rem;
+  }
+}
+
+.footer {
+  background-color: #000000;
+  color: #888888;
+  font-size: 1.25rem;
+  padding: 3rem 0rem;
+  text-align: center;
+}
+
+.footer__links {
+  font-size: 1.5rem;
+  padding-top: 1rem;
+}
+.footer__links--privacy {
+  color: #888888;
+  cursor: pointer;
+  padding: 0rem 0.5rem;
+  text-decoration: none;
+}
+.footer__links--privacy:hover {
+  color: #fdcc52;
+}
+.footer__links--terms {
+  color: #888888;
+  cursor: pointer;
+  padding: 0rem 0.5rem;
+  text-decoration: none;
+}
+.footer__links--terms:hover {
+  color: #fdcc52;
+}
+.footer__links--faq {
+  color: #888888;
+  cursor: pointer;
+  padding: 0rem 0.5rem;
+  text-decoration: none;
+}
+.footer__links--faq:hover {
+  color: #fdcc52;
+}
+
+.modal {
+  position: fixed;
+  left: 0%;
+  top: 0%;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(1.1);
+  transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+}
+.modal__content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 1rem 1.5rem;
+  width: 24rem;
+  border-radius: 0.5rem;
+}
+@media screen and (max-width: 560px) {
+  .modal__content .modal__content {
+    width: 12rem;
+  }
+}
+
+.button__close {
+  background-color: #fdcb50;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  float: right;
+  line-height: 1.5rem;
+  margin-top: 0.75rem;
+  text-align: center;
+  width: 2rem;
+}
+
+.show-modal {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+  transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+}
+
 @font-face {
   font-family: Catamaran;
   src: url(./Catamaran-VariableFont_wght.ttf);
@@ -69,112 +693,328 @@ $darker-colors": 5,10,15,20;    // ez most egy lista, az elemeke csak fel vannak
   padding: 1rem 0;
 }
 
-.text--fromLeft {
-  color: #db3a44;
+html {
+  scroll-behavior: smooth;
+  min-height: 100vh;
 }
 
-.text--toRight {
-  color: #7b4397;
+/* @use "commons/texts";
+@use "commons/backgrounds"; */
+/* @use "sass:string";              // @use -okat nem használok, ilyenkor a list.-okat elhagyjuk és a string. helyett str-  lesz
+@use "sass:list"; */
+/* @use "../variables/colors";
+@use "get-keys" as *;       // as * hogy ne kelljen megadni a namespace-t (get-keys.)
+@use "sass:map";  */
+.container {
+  box-sizing: border-box;
+  display: flex;
+  flex: 0 1 auto;
+  flex-flow: row wrap;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 5px;
+  position: relative;
+  max-width: 1280px;
+}
+@media only screen and (min-width: 640px) {
+  .container {
+    padding: 6px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .container {
+    padding: 7.5px;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .container {
+    padding: 9px;
+  }
 }
 
-.text--yellow {
-  color: #fdcb50;
+.container > [class^=col] {
+  box-sizing: border-box;
+  padding: 0.5rem;
+  position: relative;
+}
+@media only screen and (min-width: 640px) {
+  .container > [class^=col] {
+    padding: 0.75rem;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .container > [class^=col] {
+    padding: 1rem;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .container > [class^=col] {
+    padding: 1.25rem;
+  }
 }
 
-.text--newFriend {
-  color: #fbc24b;
+.col-xs-1 {
+  width: 8.3333333333%;
 }
 
-.text--iconHeart {
-  color: #db3a44;
+.col-xs-2 {
+  width: 16.6666666667%;
 }
 
-.text--twitterDot {
-  color: #1da1f2;
+.col-xs-3 {
+  width: 25%;
 }
 
-.text--white {
-  color: white;
+.col-xs-4 {
+  width: 33.3333333333%;
 }
 
-.text--facebookDot {
-  color: #3b5998;
+.col-xs-5 {
+  width: 41.6666666667%;
 }
 
-.text--googleDot {
-  color: #dd4b39;
+.col-xs-6 {
+  width: 50%;
 }
 
-.text--black {
-  color: #000000;
+.col-xs-7 {
+  width: 58.3333333333%;
 }
 
-.text--light {
-  color: #F8F9FA;
+.col-xs-8 {
+  width: 66.6666666667%;
 }
 
-.text--black {
-  color: #222;
+.col-xs-9 {
+  width: 75%;
 }
 
-.text--white {
-  color: #efefef;
+.col-xs-10 {
+  width: 83.3333333333%;
 }
 
-.background--fromLeft {
-  background-color: #db3a44;
+.col-xs-11 {
+  width: 91.6666666667%;
 }
 
-.background--toRight {
-  background-color: #7b4397;
+.col-xs-12 {
+  width: 100%;
 }
 
-.background--yellow {
-  background-color: #fdcb50;
+@media only screen and (min-width: 640px) {
+  .col-sm-1 {
+    width: 8.3333333333%;
+  }
 }
 
-.background--newFriend {
-  background-color: #fbc24b;
+@media only screen and (min-width: 640px) {
+  .col-sm-2 {
+    width: 16.6666666667%;
+  }
 }
 
-.background--iconHeart {
-  background-color: #db3a44;
+@media only screen and (min-width: 640px) {
+  .col-sm-3 {
+    width: 25%;
+  }
 }
 
-.background--twitterDot {
-  background-color: #1da1f2;
+@media only screen and (min-width: 640px) {
+  .col-sm-4 {
+    width: 33.3333333333%;
+  }
 }
 
-.background--white {
-  background-color: white;
+@media only screen and (min-width: 640px) {
+  .col-sm-5 {
+    width: 41.6666666667%;
+  }
 }
 
-.background--facebookDot {
-  background-color: #3b5998;
+@media only screen and (min-width: 640px) {
+  .col-sm-6 {
+    width: 50%;
+  }
 }
 
-.background--googleDot {
-  background-color: #dd4b39;
+@media only screen and (min-width: 640px) {
+  .col-sm-7 {
+    width: 58.3333333333%;
+  }
 }
 
-.background--black {
-  background-color: #000000;
+@media only screen and (min-width: 640px) {
+  .col-sm-8 {
+    width: 66.6666666667%;
+  }
 }
 
-.background--light {
-  background-color: #F8F9FA;
+@media only screen and (min-width: 640px) {
+  .col-sm-9 {
+    width: 75%;
+  }
 }
 
-/* @include backgrounds.generate-lighter-colored-backgrounds($theme, var(lighter));
-@include backgrounds.generate-darker-colored-backgrounds($theme, var(darker)); */
-/* @use "variables/variables";
-@use "mixins/mixins";
-@use "functions/functions";
+@media only screen and (min-width: 640px) {
+  .col-sm-10 {
+    width: 83.3333333333%;
+  }
+}
 
+@media only screen and (min-width: 640px) {
+  .col-sm-11 {
+    width: 91.6666666667%;
+  }
+}
 
-@include generate-container();          // ez is kell, használjuk a mixinünket, meghívjuk!
-@include column-default-style();     
-@include generate-columns();     
- */
+@media only screen and (min-width: 640px) {
+  .col-sm-12 {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .col-md-1 {
+    width: 8.3333333333%;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .col-md-2 {
+    width: 16.6666666667%;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .col-md-3 {
+    width: 25%;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .col-md-4 {
+    width: 33.3333333333%;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .col-md-5 {
+    width: 41.6666666667%;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .col-md-6 {
+    width: 50%;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .col-md-7 {
+    width: 58.3333333333%;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .col-md-8 {
+    width: 66.6666666667%;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .col-md-9 {
+    width: 75%;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .col-md-10 {
+    width: 83.3333333333%;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .col-md-11 {
+    width: 91.6666666667%;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .col-md-12 {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .col-lg-1 {
+    width: 8.3333333333%;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .col-lg-2 {
+    width: 16.6666666667%;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .col-lg-3 {
+    width: 25%;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .col-lg-4 {
+    width: 33.3333333333%;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .col-lg-5 {
+    width: 41.6666666667%;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .col-lg-6 {
+    width: 50%;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .col-lg-7 {
+    width: 58.3333333333%;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .col-lg-8 {
+    width: 66.6666666667%;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .col-lg-9 {
+    width: 75%;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .col-lg-10 {
+    width: 83.3333333333%;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .col-lg-11 {
+    width: 91.6666666667%;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .col-lg-12 {
+    width: 100%;
+  }
+}
 
 /*# sourceMappingURL=style.css.map */

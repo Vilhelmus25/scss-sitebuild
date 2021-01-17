@@ -1,0 +1,108 @@
+.new-friends{
+    background-color:  rgb(253,203,80);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    opacity: 0.9;
+    padding: 3rem 15rem;
+    text-align: center;
+    @media screen and(max-width: 991px){
+        padding: 3rem 7.5rem;
+    }
+    &:hover{
+        opacity: 1;
+    }
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+  }
+
+.h1-newFriends{
+    font-size: 3rem;   
+}
+
+.icon-heart{
+    color: rgb(219,58,68);
+    font-size: 4rem;
+}
+
+.icon-collection{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.twitter-circle{
+  height: 5rem;
+  width: 5rem;
+  background-color: rgb(29,161,242);
+  border-radius: 50%;
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+  margin: 0.25rem;
+}
+.icon-social-twitter{
+   position: relative;
+   top:20%;
+    color: rgb(255,255,255);
+    font-size: 3rem;
+}
+
+.facebook-circle{
+  height: 5rem;
+  width: 5rem;
+  background-color: rgb(59,89,152);
+  border-radius: 50%;
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+  margin: 0.25rem;
+}
+
+.icon-social-facebook{
+    position: relative;
+    top:20%;
+    color: rgb(255,255,255);
+    font-size: 3rem;
+}
+
+.google-circle{
+  height: 5rem;
+  width: 5rem;
+  background-color: rgb(221,75,57);
+  border-radius: 50%;
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+  margin: 0.25rem;
+}
+.icon-social-google{
+    position: relative;
+    top:20%;
+    color: rgb(255,255,255);
+    font-size: 3rem;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #333333;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0rem;
+    border-radius: 30px;
+   
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+  }
+  
+  /* Show the tooltip text when you mouse over the tooltip container */
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+  }

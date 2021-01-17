@@ -1,0 +1,9 @@
+@use "../variables/variables";
+@forward "../mixins/mixins";
+@use "../mixins/generate-container";
+@use "../functions/functions";
+
+
+@include generate-container.generate-container();          // ez is kell, használjuk a mixinünket, meghívjuk!
+@include mixins.column-default-style();     
+@include mixins.generate-columns();     

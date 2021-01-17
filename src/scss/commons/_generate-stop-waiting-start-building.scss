@@ -1,0 +1,69 @@
+.stop-waiting-start-building{
+    margin-top: 1rem;
+}
+
+.image-layout{
+    position: relative;
+    background-color: #000000;
+}
+
+.opacited-container{
+    padding: 0;
+}
+
+.opacitedImg{
+    width: 100%;
+    height: auto;
+    opacity: 0.4;
+    background-size: cover;
+    //margin: auto;
+}
+
+.to-left-waiting{
+    color: #F8F9FA;
+    font-size: 5rem;
+    left:15%;
+    margin: 0;
+    position: absolute;
+    top:20%;
+    @media screen and(max-width:991px){
+        font-size: 3rem;
+    }
+  }
+  .to-left-building{
+    color: #F8F9FA;
+    font-size: 5rem;
+    left:15%;
+    margin: 0;
+    position: absolute;
+    top:40%;
+    @media screen and(max-width:991px){
+        font-size: 3rem;
+    }
+     
+  }
+  .to-left-button{
+    background-color: transparent;
+    border-color:#F8F9FA;
+    border-radius: 50px 50px 50px 50px;
+    color: #F8F9FA;
+    cursor: pointer;
+    font-size: 1rem;
+    text-transform: uppercase;
+    left:15%;
+    margin: 0;
+    padding: 1.25rem 2.5rem;
+    position: absolute;
+    top:60%;
+    &:hover{
+        border-color: #fdcc52;
+        color: #fdcc52;
+        transition: .3s ease;  
+    }
+    &:focus{
+        outline: none;
+    }
+    @media screen and(max-width:991px){
+        font-size: 0.75rem;
+    } 
+  }

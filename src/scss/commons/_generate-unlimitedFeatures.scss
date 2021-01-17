@@ -1,0 +1,118 @@
+.unlimitedFeatures{
+    margin-bottom: 4rem;
+}
+
+.container__unlimitedFeatures{
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+    &--unlimited{
+        font-size: 3rem;
+        margin: auto;
+        padding: 0rem 5rem;
+        padding-top: 3rem;
+        text-align: center;
+    }
+    &--checkOut{
+        font-size: 1.25rem;
+        margin: auto;
+        padding: 2rem 5rem;
+        padding-bottom: 3rem;
+        text-align: center;
+        color: #888888;
+    }
+    &--divider{
+        border-top: 3px solid #ddd;
+        border-radius: 10%;
+        width: 15%;
+    }
+}
+
+.unlimited-head{
+    padding: 3rem 5rem;
+    margin-left: auto;
+    margin-right: auto;
+        
+}
+
+.container__phonePros{
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+   
+}
+
+.phone2{
+    height: auto;
+    width: 100%;
+    margin-top: 2rem;
+    &__img{
+        width: 400px;
+        padding-left: 29%;
+        position: relative;
+        @media screen and (max-width: 992px){
+            padding-left: 0%;
+        }
+        @media screen and (min-width: 992px){
+            padding-left: 15%;
+            margin: auto;
+        }
+    }
+
+    &__img--screen{
+        width: 352px;
+        padding-left: 27.25%;
+        position: absolute;
+        top:104px;
+        left: 40.5px;
+        @media screen and (max-width: 639px){
+            top: 95px;
+            left:19px;
+        }
+        @media screen and (max-width: 992px){
+            padding-left: 0%;
+            top: 104px;
+            left: 36px;
+        }
+        @media screen and (min-width: 992px){
+            padding-left: 15%;
+            top: 108px;
+            left: 36px;
+        }
+        @media screen and (min-width: 1280px){
+            padding-left: 15%;
+            top: 112px;
+            left: 38px;
+        }
+    }
+}
+
+.row__container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 3rem 0rem;
+    text-align: center;
+    @media screen and(max-width: 991px){
+        flex-direction: column;
+        justify-content: center;
+        padding: 0rem 0rem;
+    }
+}
+
+.spec-icons{
+    font-size: 5rem;
+    background: -webkit-linear-gradient(0deg, rgb(219,58,68), rgb(123,67,151));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+    
+}
+.col-sm-12{
+
+    @media screen and(max-width:991px){
+        margin-top: 3rem;
+    }
+}

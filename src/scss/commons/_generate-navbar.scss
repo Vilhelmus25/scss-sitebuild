@@ -1,24 +1,108 @@
 
 .navbar{
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
-    padding: 1rem 2rem;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0; 
+    padding: 0rem 7.5rem;
+    padding-bottom: 0.75rem;
+    padding-top: 0.25rem;
 
-    &__a{
-        margin: auto 0rem;
-        text-decoration: none;
-    };
-
-    &__button{
-    border-radius: 0.5rem;
-    padding: 0 1rem;
-    text-align: center;    
-        &-menu{
-
+        &__a{
+            color: rgb(253,203,80);
+            display: flex;
+            font-size: 2rem;
+            margin: auto 0rem;
+            padding: 0rem, 0rem ;        
+            text-decoration: none;
+            align-items: flex-start;
+            align-self: center;
+            &:hover{
+                color: white;
+                transition: .3s ease;
+            }
         };
+
+        &__button{
+            display: none;
+
+            @media screen and (max-width: 991px) {
+                border-radius: 0.5rem;
+                border: 1px;
+                border-style: solid;
+                border-color: #dddddd;
+                background-color: #fff;
+                cursor: pointer;
+                display: block;
+                outline: none;
+                padding: 0rem 1rem;
+                text-align: center; 
+            }
+           
+        }
+
+        &__container {        /* olyan mintha azt adtam volna, hogy   .nav__container     */
+            align-items: flex-start;
+            display: flex;
+            flex-direction: row-reverse;
+            /* ettől fordul meg a sorrendje a checkboxnak és a labelnek */
+            
+            @media screen and (min-width: 992px) {
+                  align-items: center;
+                  justify-content: right;
+              }
+        }
+        
+        &__list {
+            display: none;
+            /* ne jelenjen meg a lista alapból (mobil nézetben) */
+            flex-direction: column;
+            list-style: none;
+            margin: 0 auto;
+            padding: 0;
+            width: 100%;
+            @media screen and (min-width: 992px) {
+                display: flex;
+                flex-direction: row;
+                  justify-content: flex-end;
+                  list-style: none;
+                  margin: 0 auto;
+                  padding: 1rem;
+                  
+                 // width: auto;
+              }
+        }
+        
+        &__item {
+
+            text-align: end;
+            &--link{
+                @media screen and (min-width: 992px) {
+                   
+                    //justify-content: right;
+                    color: #bbbbbb;
+                    list-style: none;
+                    margin: 0 auto;
+                    padding: 1rem;
+                    text-decoration: none;
+                    //width: auto;
+                }
+            }
+            &--link:hover{
+                color: white;
+                transition: .3s ease;
+            }
+            &--link:focus{
+                
+                
+            }
+        }
+
+    @media screen and (min-width: 992px){
+        margin-top: -5rem;
     }
+        
 }
 
-.fa-bars{
-
-}

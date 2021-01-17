@@ -1,13 +1,56 @@
- @use "commons/generate-navbar";
- @use "commons/texts";
-@use "commons/backgrounds";
+@use "commons/generate-navbar";
+@use "commons/generate-purple-pink";
+@use "commons/generate-discover";
+@use "commons/generate-unlimitedFeatures";
+@use "commons/generate-new-friends";
+@use "commons/generate-stop-waiting-start-building";
+@use "commons/generate-footer";
+@use "commons/generate-modals";
 
-/* @use "variables/variables";
-@use "mixins/mixins";
-@use "functions/functions";
+
+@font-face{
+    font-family: Catamaran;
+    src: url(./Catamaran-VariableFont_wght.ttf); 
+  };
+  @font-face{
+    font-family: Lato;
+    src: url(./Lato-Regular.ttf); 
+  };
+  @font-face{
+    font-family: Muli;
+    src: url(./Mulish-VariableFont_wght.ttf);
+  };
+  
+  .catamaran{
+      font-family: 'Catamaran', Helvetica, Arial, sans-serif;
+  };
+  .lato{
+      font-family: 'Lato', Helvetica, Arial, sans-serif;
+  };
+  .muli{
+      font-family: 'Muli',  Helvetica, Arial, sans-serif;
+  };
+  
+  .text {
+    font: 1rem/1.5 Arial, Helvetica, sans-serif;
+    padding: 1rem 0;
+  };
+
+
+html{
+    scroll-behavior: smooth;
+    min-height: 100vh;
+}
+
+/* @use "commons/texts";
+@use "commons/backgrounds"; */
+
+@import "variables/variables";
+@import "mixins/mixins";
+@import "functions/functions";
 
 
 @include generate-container();          // ez is kell, használjuk a mixinünket, meghívjuk!
 @include column-default-style();     
 @include generate-columns();     
- */
+ 

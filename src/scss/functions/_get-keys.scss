@@ -1,5 +1,5 @@
-@use "sass:string";              // @use -okat nem használok, ilyenkor a list.-okat elhagyjuk és a string. helyett str-  lesz
-@use "sass:list";
+/* @use "sass:string";              // @use -okat nem használok, ilyenkor a list.-okat elhagyjuk és a string. helyett str-  lesz
+@use "sass:list"; */
 
 @function get-keys($string, $separator: '-') {
     $keys: ();

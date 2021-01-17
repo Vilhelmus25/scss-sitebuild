@@ -1,8 +1,8 @@
+@use "sass:map";
 @use "../variables/colors";
 @use "../mixins/texts";
 @use "../functions/var.scss" as *;
 @use "../functions/get-default-theme" as *;
-@use "sass:map";
 
 @font-face{
   font-family: Catamaran;

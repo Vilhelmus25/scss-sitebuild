@@ -1,8 +1,8 @@
-@use "../variables/colors";
+/* @use "../variables/colors";
 @use "get-keys" as *;       // as * hogy ne kelljen megadni a namespace-t (get-keys.)
-@use "sass:map"; 
+@use "sass:map";  */
 
-@function var($string, $data: colors.$colors){
+@function var($string, $data: $config){
     $keys: get-keys($string);
     
     @each $key in $keys{
